@@ -1,0 +1,367 @@
+/* Football Page Styles */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #4f46e5;
+    --accent-color: #06b6d4;
+    --dark-color: #1e1b4b;
+    --light-color: #f8fafc;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Chillax', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: #0f172a;
+}
+
+/* Navigation */
+.navbar {
+    padding: 1.5rem 0;
+    background: var(--dark-color);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white !important;
+}
+
+/* Hero Section */
+.football-hero {
+    height: 60vh;
+    background: url('../images/football/hero-bg.jpg') center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 76px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+        rgba(30, 27, 75, 0.8),
+        rgba(30, 27, 75, 0.6));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content .lead {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Leagues Section */
+.leagues-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.league-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.league-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.league-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.league-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.league-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.league-link:hover {
+    color: var(--accent-color);
+}
+
+/* Matches Section */
+.matches-section {
+    padding: 5rem 0;
+    background: #f1f5f9;
+}
+
+.matches-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.match-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.match-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.match-date {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.team {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.vs {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.match-league {
+    color: var(--dark-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.match-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.match-link:hover {
+    color: var(--accent-color);
+}
+
+/* Scorers Section */
+.scorers-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.scorers-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.scorers-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.scorers-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.scorers-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.scorers-list li:last-child {
+    border-bottom: none;
+}
+
+.player {
+    font-weight: 500;
+}
+
+.goals {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* News Section */
+.news-section {
+    padding: 5rem 0;
+    background: #f1f5f9;
+}
+
+.news-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.news-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.1);
+}
+
+.news-content {
+    padding: 2rem;
+}
+
+.news-content h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.news-content p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.read-more:hover {
+    color: var(--accent-color);
+    gap: 1rem;
+}
+
+.btn-primary {
+    background: var(--gradient);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .football-hero {
+        height: 50vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .match-teams {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .navbar-collapse {
+        background: var(--dark-color);
+        padding: 1rem;
+        margin: 1rem -1rem -1rem;
+        border-radius: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .football-hero {
+        height: 40vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content .lead {
+        font-size: 1.2rem;
+    }
+
+    .league-card,
+    .match-card,
+    .scorers-card {
+        margin-bottom: 1.5rem;
+    }
+}

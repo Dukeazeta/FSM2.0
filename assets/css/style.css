@@ -220,14 +220,17 @@ body {
 }
 
 .grid-item {
-    border-radius: 20px;
-    overflow: hidden;
     position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-    will-change: transform;
-    background-position: center;
+    border-radius: 20px;
     background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .grid-item::before {
@@ -292,6 +295,109 @@ body {
         transform: translateY(20px);
         opacity: 0;
     }
+}
+
+.live-stat {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.live-stat .stat-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+/* Goals Stat */
+.live-stat .score {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.live-stat .match-time {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+/* Possession Stat */
+.possession-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    margin: 1rem 0;
+}
+
+.team1-bar, .team2-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.team1-bar {
+    background: var(--primary-color);
+}
+
+.team2-bar {
+    background: var(--accent-color);
+}
+
+.team-names {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Shots on Target */
+.shots {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.team1-shots, .team2-shots {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.shots i {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+.shots-text {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.grid-item:hover .live-stat {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 991px) {

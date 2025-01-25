@@ -180,3 +180,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     lazyImages.forEach(img => imageObserver.observe(img));
 });
+
+// ===============================
+// Live Match Statistics Update
+// ===============================
+function updateMatchStats() {
+    // This would typically fetch data from an API
+    // For demo, we'll use mock data updates
+    const mockUpdates = {
+        goals: {
+            team1: Math.floor(Math.random() * 4),
+            team2: Math.floor(Math.random() * 3)
+        },
+        possession: {
+            team1: Math.floor(Math.random() * 30) + 40, // 40-70%
+            team2: function() { return 100 - this.team1; }
+        },
+        shots: {
+            team1: Math.floor(Math.random() * 5) + 1,
+            team2: Math.floor(Math.random() * 4) + 1
+        },
+        matchTime: Math.floor(Math.random() * 90) + 1
+    };
+
+    // Update Goals
+    document.querySelector('.score .team1').textContent = mockUpdates.goals.team1;
+    document.querySelector('.score .team2').textContent = mockUpdates.goals.team2;
+    document.querySelector('.match-time').textContent = mockUpdates.matchTime + "'";
+
+    // Update Possession
+    const team1Possession = mockUpdates.possession.team1;
+    const team2Possession = 100 - team1Possession;
+    document.querySelector('.team1-bar').style.width = team1Possession + '%';
+    document.querySelector('.team2-bar').style.width = team2Possession + '%';
+    document.querySelector('.team1-bar').textContent = team1Possession + '%';
+    document.querySelector('.team2-bar').textContent = team2Possession + '%';
+
+    // Update Shots
+    const team1Shots = document.querySelector('.team1-shots');
+    const team2Shots = document.querySelector('.team2-shots');
+    team1Shots.innerHTML = Array(mockUpdates.shots.team1).fill('<i class="fas fa-circle"></i>').join('');
+    team2Shots.innerHTML = Array(mockUpdates.shots.team2).fill('<i class="fas fa-circle"></i>').join('');
+    document.querySelector('.shots-text span:first-child').textContent = mockUpdates.shots.team1;
+    document.querySelector('.shots-text span:last-child').textContent = mockUpdates.shots.team2;
+}
+
+// Update stats every 30 seconds
+setInterval(updateMatchStats, 30000);
+
+// Initial update
+document.addEventListener('DOMContentLoaded', updateMatchStats);

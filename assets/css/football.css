@@ -117,6 +117,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    pointer-events: none; /* Prevent interference with content */
 }
 
 .mouse {
@@ -146,6 +147,127 @@ body {
         transform: translateY(15px);
         opacity: 0;
     }
+}
+
+/* Hide scroll indicator on mobile */
+@media (max-width: 768px) {
+    .scroll-down {
+        display: none;
+    }
+}
+
+/* Live Match Hero Section */
+.hero-match {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.match-status {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.status-live {
+    background: rgba(220, 38, 38, 0.2);
+    color: #ef4444;
+}
+
+.status-finished {
+    background: rgba(6, 182, 212, 0.2);
+    color: #06b6d4;
+}
+
+.match-teams-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.team-score {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.match-separator {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+.match-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.match-stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.match-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.match-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-stats {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-stats:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-highlights {
+    background: var(--gradient);
+    color: white;
+}
+
+.btn-highlights:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Leagues Section */

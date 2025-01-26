@@ -1,0 +1,62 @@
+/* Variables and Utilities */
+
+:root {
+    /* Colors */
+    --primary-color: #6366f1;
+    --secondary-color: #4f46e5;
+    --accent-color: #06b6d4;
+    --dark-color: #1e1b4b;
+    --light-color: #f8fafc;
+    
+    /* Gradients */
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    --gradient-hover: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    
+    /* Effects */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+    
+    /* Backgrounds */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+}
+
+.hover-lift {
+    transition: var(--transition);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Performance Optimizations */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+}

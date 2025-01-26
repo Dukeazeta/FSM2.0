@@ -1,0 +1,60 @@
+/* Animations */
+
+/* Pulse Animation for Live Indicator */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+/* Score Update Animation */
+@keyframes scoreUpdate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        color: var(--accent-color);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Animation Classes */
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+.score-update {
+    animation: scoreUpdate 1s ease;
+}
+
+.loading {
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.1)
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}

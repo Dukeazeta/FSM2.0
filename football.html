@@ -10,7 +10,9 @@
     <link href="https://api.fontshare.com/v2/css?f[]=chillax@1,600,500,300,700,400&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/variables.css">
@@ -18,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/football.css">
+    <link rel="stylesheet" href="assets/css/football-components.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -180,64 +183,209 @@
     </section>
 
     <!-- Latest Results Section -->
-    <section class="latest-results">
+    <section class="latest-results py-5">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Latest Results</h2>
+            <div class="section-header text-center mb-5">
+                <h2 class="gradient-text">Latest Results</h2>
+                <p class="section-subtitle">Recent matches across all competitions</p>
+            </div>
+            
             <div class="results-grid">
-                <div class="result-card" data-aos="fade-up">
-                    <div class="result-header">
-                        <span class="competition-name">VC Cup</span>
-                        <span class="match-date">Yesterday</span>
+                <!-- VC Cup Results -->
+                <div class="competition-results" data-aos="fade-up">
+                    <div class="competition-header">
+                        <img src="assets/images/vc-cup.png" alt="VC Cup" class="competition-logo">
+                        <h3>VC Cup</h3>
                     </div>
-                    <div class="teams">
-                        <div class="team">
-                            <span class="team-name">Management</span>
-                            <span class="score">3</span>
+                    <div class="match-card">
+                        <div class="match-date">Yesterday - Quarter Final</div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <span class="team-name">Engineering</span>
+                                <span class="score">3</span>
+                            </div>
+                            <div class="match-info">
+                                <span class="match-status">FT</span>
+                                <div class="match-stats">
+                                    <span>Goals: Obi (2), Ade (1)</span>
+                                </div>
+                            </div>
+                            <div class="team">
+                                <span class="team-name">Sciences</span>
+                                <span class="score">1</span>
+                            </div>
                         </div>
-                        <div class="team">
-                            <span class="team-name">Arts</span>
-                            <span class="score">1</span>
-                        </div>
-                    </div>
-                    <div class="result-footer">
-                        <a href="#" class="btn-highlights">
-                            <i class="fas fa-play-circle"></i>
-                            Highlights
-                        </a>
-                        <a href="#" class="btn-stats">
-                            <i class="fas fa-chart-bar"></i>
-                            Match Stats
-                        </a>
                     </div>
                 </div>
-                <!-- More result cards... -->
+
+                <!-- Super League Results -->
+                <div class="competition-results" data-aos="fade-up" data-aos-delay="100">
+                    <div class="competition-header">
+                        <img src="assets/images/super-league.png" alt="Super League" class="competition-logo">
+                        <h3>Super League</h3>
+                    </div>
+                    <div class="match-card">
+                        <div class="match-date">2 days ago - Matchday 6</div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <span class="team-name">Block 5</span>
+                                <span class="score">2</span>
+                            </div>
+                            <div class="match-info">
+                                <span class="match-status">FT</span>
+                                <div class="match-stats">
+                                    <span>Goals: John (1), Mike (1)</span>
+                                </div>
+                            </div>
+                            <div class="team">
+                                <span class="team-name">Block 3</span>
+                                <span class="score">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hostel Cup Results -->
+                <div class="competition-results" data-aos="fade-up" data-aos-delay="200">
+                    <div class="competition-header">
+                        <img src="assets/images/hostel-cup.png" alt="Hostel Cup" class="competition-logo">
+                        <h3>Hostel Cup</h3>
+                    </div>
+                    <div class="match-card">
+                        <div class="match-date">3 days ago - Group Stage</div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <span class="team-name">Delta</span>
+                                <span class="score">4</span>
+                            </div>
+                            <div class="match-info">
+                                <span class="match-status">FT</span>
+                                <div class="match-stats">
+                                    <span>Goals: Sam (2), Peter (2)</span>
+                                </div>
+                            </div>
+                            <div class="team">
+                                <span class="team-name">Niger</span>
+                                <span class="score">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Results</a>
             </div>
         </div>
     </section>
 
     <!-- Top Scorers Section -->
-    <section class="top-scorers">
+    <section class="top-scorers py-5 bg-light">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Top Scorers</h2>
-            <div class="scorers-grid">
-                <div class="scorer-card" data-aos="fade-up">
-                    <div class="scorer-rank" style="background: var(--gradient)">1</div>
-                    <div class="scorer-info">
-                        <h3>John Doe</h3>
-                        <span class="team">Engineering</span>
-                    </div>
-                    <div class="scorer-stats">
-                        <div class="stat">
-                            <span class="number">12</span>
-                            <span class="label">Goals</span>
-                        </div>
-                        <div class="stat">
-                            <span class="number">5</span>
-                            <span class="label">Assists</span>
-                        </div>
+            <div class="section-header text-center mb-5">
+                <h2 class="gradient-text">Top Scorers</h2>
+                <p class="section-subtitle">Leading goal scorers across all competitions</p>
+            </div>
+
+            <div class="row">
+                <!-- Competition Tabs -->
+                <div class="col-lg-3">
+                    <div class="competition-tabs">
+                        <button class="competition-tab active" data-competition="vc-cup">
+                            <img src="assets/images/vc-cup.png" alt="VC Cup" class="tab-logo">
+                            <span>VC Cup</span>
+                        </button>
+                        <button class="competition-tab" data-competition="super-league">
+                            <img src="assets/images/super-league.png" alt="Super League" class="tab-logo">
+                            <span>Super League</span>
+                        </button>
+                        <button class="competition-tab" data-competition="hostel-cup">
+                            <img src="assets/images/hostel-cup.png" alt="Hostel Cup" class="tab-logo">
+                            <span>Hostel Cup</span>
+                        </button>
                     </div>
                 </div>
-                <!-- More scorer cards... -->
+
+                <!-- Scorers List -->
+                <div class="col-lg-9">
+                    <div class="scorers-table">
+                        <div class="table-header">
+                            <div class="rank">#</div>
+                            <div class="player">Player</div>
+                            <div class="team">Team</div>
+                            <div class="stats">
+                                <span title="Goals">⚽</span>
+                                <span title="Assists">👟</span>
+                                <span title="Matches">👕</span>
+                            </div>
+                        </div>
+
+                        <!-- VC Cup Scorers -->
+                        <div class="competition-scorers active" id="vc-cup-scorers">
+                            <div class="scorer-row" data-aos="fade-left">
+                                <div class="rank">1</div>
+                                <div class="player">
+                                    <div class="player-info">
+                                        <div class="player-name">Obi Mikel</div>
+                                        <div class="player-position">Forward</div>
+                                    </div>
+                                </div>
+                                <div class="team">Engineering</div>
+                                <div class="stats">
+                                    <span class="goals">8</span>
+                                    <span class="assists">4</span>
+                                    <span class="matches">6</span>
+                                </div>
+                            </div>
+
+                            <div class="scorer-row" data-aos="fade-left" data-aos-delay="100">
+                                <div class="rank">2</div>
+                                <div class="player">
+                                    <div class="player-info">
+                                        <div class="player-name">John Doe</div>
+                                        <div class="player-position">Midfielder</div>
+                                    </div>
+                                </div>
+                                <div class="team">Sciences</div>
+                                <div class="stats">
+                                    <span class="goals">6</span>
+                                    <span class="assists">7</span>
+                                    <span class="matches">6</span>
+                                </div>
+                            </div>
+
+                            <div class="scorer-row" data-aos="fade-left" data-aos-delay="200">
+                                <div class="rank">3</div>
+                                <div class="player">
+                                    <div class="player-info">
+                                        <div class="player-name">Sam Peter</div>
+                                        <div class="player-position">Forward</div>
+                                    </div>
+                                </div>
+                                <div class="team">Management</div>
+                                <div class="stats">
+                                    <span class="goals">5</span>
+                                    <span class="assists">3</span>
+                                    <span class="matches">5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Super League Scorers (Initially Hidden) -->
+                        <div class="competition-scorers" id="super-league-scorers">
+                            <!-- Similar structure as VC Cup scorers -->
+                        </div>
+
+                        <!-- Hostel Cup Scorers (Initially Hidden) -->
+                        <div class="competition-scorers" id="hostel-cup-scorers">
+                            <!-- Similar structure as VC Cup scorers -->
+                        </div>
+                    </div>
+
+                    <div class="stats-footer text-center mt-4">
+                        <a href="#" class="btn btn-outline-primary">View Full Statistics</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

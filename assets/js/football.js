@@ -106,14 +106,39 @@ class LiveMatch {
     }
 }
 
-// Initialize live match on page load
-document.addEventListener('DOMContentLoaded', () => {
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+
+    // Initialize live match
     const liveMatch = new LiveMatch();
     liveMatch.startLiveUpdates();
 
-    // Add smooth scroll behavior for navigation
+    // Competition tab switching
+    const competitionTabs = document.querySelectorAll('.competition-tab');
+    const competitionScorers = document.querySelectorAll('.competition-scorers');
+
+    competitionTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and content
+            competitionTabs.forEach(t => t.classList.remove('active'));
+            competitionScorers.forEach(c => c.classList.remove('active'));
+
+            // Add active class to clicked tab and corresponding content
+            tab.classList.add('active');
+            const competition = tab.dataset.competition;
+            document.getElementById(`${competition}-scorers`).classList.add('active');
+        });
+    });
+
+    // Add smooth scroll behavior to all internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -123,12 +148,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    });
-
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
     });
 });
